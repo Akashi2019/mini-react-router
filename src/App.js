@@ -9,8 +9,8 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  Switch
-} from 'react-router-dom';
+  // Switch
+} from './react-router-dom';
 import './App.css';
 
 function App() {
@@ -21,13 +21,13 @@ function App() {
         <Link to="/user">用户</Link>
         <Link to="/login">登录</Link>
         <Link to="/product/123">商品</Link>
-        <Switch>
+        {/* <Switch> */}
           <Route path="/" exact component={HomePage}/>
           <Route path="/product/:xx" exact component={ProductPage}/>
           <Route path="/user" exact component={UserPage}/>
           <Route path="/login" exact component={LoginPage}/>
-          <Route component={_404Page}/>
-        </Switch>
+          {/* <Route component={_404Page}/> */}
+        {/* </Switch> */}
       </Router>
     </div>
   );
