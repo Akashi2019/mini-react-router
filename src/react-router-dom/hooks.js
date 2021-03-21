@@ -1,5 +1,5 @@
-import RouterContext from './RouterContext';
 import { useContext } from 'react';
+import { RouterContext } from './RouterContext';
 
 export function useHistory() {
   return useContext(RouterContext).history;

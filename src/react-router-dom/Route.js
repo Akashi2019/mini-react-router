@@ -22,21 +22,26 @@ export default class Route extends Component {
             : context.match;
           const props = {
             ...context,
+            location,
             match
           };
-          return match
-            ? children
-              ? typeof children === 'function'
+          return (
+            <RouterContext.Provider value={props}>
+              {match
+                ? children
+                  ? typeof children === 'function'
+                    ? children(props)
+                    : children
+                  : component
+                  ? React.createElement(component, props)
+                  : render
+                  ? render(props)
+                  : null
+                : typeof children === 'function'
                 ? children(props)
-                : children
-              : component
-              ? React.createElement(component, props)
-              : render
-              ? render(props)
-              : null
-            : typeof children === 'function'
-            ? children(props)
-            : null;
+                : null}
+            </RouterContext.Provider>
+          );
         }}
       </RouterContext.Consumer>
     );

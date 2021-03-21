@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-export default function _404Page(){
-  return <div>用户</div>
+export default class UserPage extends Component {
+  render() {
+    const { match } = this.props;
+    console.log('match: ', match);
+    return <div>用户</div>;
+  }
 }

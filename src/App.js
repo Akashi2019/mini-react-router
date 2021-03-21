@@ -20,7 +20,7 @@ function App() {
         <Link to="/">首页</Link>
         <Link to="/user">用户</Link>
         <Link to="/login">登录</Link>
-        <Link to="/product/123">商品</Link>
+        <Link to="/product/123">商品</Link>        
         <Switch>
           <Route
             path="/"
